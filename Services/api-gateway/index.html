@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>CORS Demo API Gateway</title>
+    </head>
+    <body>
+        <h1>Making a CORS request to API Gateway...</h1>
+        <div id="tofetch"/>
+    </body>
+
+
+    <!-- CORS demo -->
+    <script>
+        var tofetch = document.getElementById("tofetch");
+
+        fetch('https://kfz6b0ty9i.execute-api.eu-west-2.amazonaws.com/prod/houses')
+        .then((response) => { 
+            return response.text();
+        })
+        .then((html) => {
+            tofetch.innerHTML = html     
+        });
+    </script>
+</html>
+
