@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: An example CloudFormation that requires CAPABILITY_IAM and CAPABILITY_NAMED_IAM
+
+Resources:
+  MyCustomNamedRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: MyCustomRoleName
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: [ec2.amazonaws.com]
+            Action: ['sts:AssumeRole']
+      Path: "/"
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonEC2FullAccess
+      Policies:
+        - PolicyName: MyPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: 's3:*'
+                Resource: '*'
+
+Outputs:
+  RoleArn:
+    Description: The ARN of the created IAM Role
+    Value: !GetAtt MyCustomNamedRole.Arn
