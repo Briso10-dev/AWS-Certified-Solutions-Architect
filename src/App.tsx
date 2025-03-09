@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './components/items/Navbar.tsx'
 import Home from './pages/Home.tsx'
