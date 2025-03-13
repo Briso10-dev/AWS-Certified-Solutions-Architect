@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -10,9 +11,9 @@ const Navbar = () => {
         <h1 className="text-xl font-bold">AWS Challenges</h1>
         
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setOpen(!open)}>
+        <Button className="md:hidden" onClick={() => setOpen(!open)}>
           ☰
-        </button>
+        </Button>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-4">

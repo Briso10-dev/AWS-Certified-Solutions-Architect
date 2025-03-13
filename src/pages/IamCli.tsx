@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button"
+
 
 function IAMCLI(){
     return (
@@ -9,9 +11,9 @@ function IAMCLI(){
         <p className="mt-4">
           <span className="font-semibold">Goal:</span> Understand how to manage AWS permissions using IAM.
         </p>
-        <button className="mt-6 px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition">
+        <Button className="mt-6 px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition">
           Start Challenge
-        </button>
+        </Button>
       </div>
     );
   };
